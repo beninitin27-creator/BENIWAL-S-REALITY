@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BENIWAL’S Reality</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>BENIWAL’S Reality</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="properties.html">Properties</a>
+      <a href="locations.html">Locations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <h2>Find Your Dream Home</h2>
+    <p>Luxury homes, apartments, and villas at your fingertips</p>
+    <a href="properties.html" class="btn">Explore Properties</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 BENIWAL’S Reality. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const hero = document.getElementById("hero");
+
+    // Generate 100 unsplash images (different queries for variety)
+    const images = [];
+    for (let i=1; i<=100; i++) {
+      images.push(`https://source.unsplash.com/1600x900/?house,home,property,realestate&sig=${i}`);
+    }
+
+    let index = 0;
+    function changeBackground() {
+      hero.style.background = `url('${images[index]}') no-repeat center center/cover`;
+      index = (index + 1) % images.length;
+    }
+    setInterval(changeBackground, 5000);
+    changeBackground();
+  </script>
+</body>
+</html>
